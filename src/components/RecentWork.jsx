@@ -67,17 +67,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
-import mask2 from "../assets2/mask2.png";
-import mask1 from "../assets2/mask1.png";
+import mask2 from "../assets/mask2.png";
+import mask1 from "../assets/mask1.png";
 
 export default function RecentWork() {
   return (
-    <div id='recentWork' className="bg-white pt-20 pb-16 px-[180px]">
+    <div id='recentWork' className="bg-white pt-20 pb-16  md:px-[90px] lg:px-[180px] px-6">
       {/* Header section */}
       <div className="flex flex-col gap-3 items-center justify-center pb-16">
         <h1 className="font-bold text-black text-[30px]">Recent Work</h1>
         <p
-          className="text-neutral-400 max-w-[582px] tracking-widest text-center"
+          className="text-neutral-400 max-w-[582px] tracking-widest text-center px-2 "
           style={{ wordSpacing: "5px" }}
         >
           Solving user & business problems since last 15+ years. Lorem ipsum
