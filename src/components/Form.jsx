@@ -42,7 +42,7 @@ export default function Form() {
       Message:
       <textarea
         placeholder="Write your message"
-        rows="4"
+        rows="6"
         className="border border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:ring-1 focus:ring-lime-700 bg-white placeholder-neutral-400 placeholder:text-[12px] text-black"
       ></textarea>
     </label>

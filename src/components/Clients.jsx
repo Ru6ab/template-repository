@@ -9,7 +9,7 @@ export default function Clients() {
     <div className="flex flex-col gap-12   md:px-[180px] mt-12 pb-16">
       <div>
         <div className="mb-8 text-center lg:text-left">
-          <h1 className="text-neutral-200 text-[16px] font-md">Worked with</h1>
+          <h1 className="text-neutral-200 text-[14px] ibm-font font-md">Worked with</h1>
         </div>
 
         <div className="flex flex-col flex-wrap  items-center text-neutral-600 lg:flex-row lg:flex-nowrap justify-between gap-8  ">

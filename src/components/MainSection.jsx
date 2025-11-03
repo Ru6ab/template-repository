@@ -21,7 +21,7 @@ export default function MainSection() {
           mx-auto md:mx-0 transition hover:bg-lime-600"
         >
           <h1 className="text-white font-bold tracking-wider">
-            Let's get started
+            Let's get started &gt;
           </h1>
         </button>
       </div>
