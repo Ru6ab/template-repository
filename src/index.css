@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Poppins:wght@400;600&family=Playfair+Display:wght@500;700&display=swap');
 @import "tailwindcss";
+
 
 html {
   scroll-behavior: smooth;
+}
+
+.ibm-font {
+  font-family: 'IBM Plex Mono', monospace;
+}
+.raleway-font {
+  font-family: 'Raleway', sans-serif;
 }

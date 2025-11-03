@@ -1,83 +1,22 @@
-// import React from 'react'
-// import mask2 from '../assets2/mask2.png'
-// import mask1 from '../assets2/mask1.png'
-// export default function RecentWork() {
-//   return (
-//     <div className='bg-white pt-20 pb-16 px-[180px]'>
-//           <div className="flex flex-col gap-3 items-center justify-center pb-16">
-//         <h1 className="font-bold text-black text-[30px]">Case Studies</h1>
-//         <p
-//           className="text-neutral-400 max-w-[582px] tracking-widest "
-//           style={{ wordSpacing: "5px" }}
-//         >
-//           Solving user & business problems since last 15+ years. Lorem ipsum
-//           dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-//           incididunt ut labore et dolore magna aliqua.
-//         </p>
-//       </div>
-
-//       <div className='flex flex-row justify-center items-center gap-6'>
-//         <div className='flex flex-col'>
-//             <img src={mask2}/>
-//               <h1 className="font-bold text-black text-[24px] my-4">
-//               Work name here
-//             </h1>
-//             <p
-//               className="max-w-[x] text-neutral-400 tracking-widest text-[14px] mt-2"
-//               style={{ wordSpacing: "5px" }}
-//             >
-//               {" "}
-//              Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.
-//             </p>
-//            <span><button className="bg-lime-700 text-[16px] text-white  py-2 px-[15px] rounded-[4px] mt-6 font-semibold tracking-wider">
-//             Know more
-//             </button></span> 
-//             </div>
-
-//              <div className='flex flex-col'>
-//             <img src={mask1}/>
-//               <h1 className="font-bold text-black text-[24px] my-4">
-//               Work name here
-//             </h1>
-//             <p
-//               className="max-w-[x] text-neutral-400 tracking-widest text-[14px] mt-2"
-//               style={{ wordSpacing: "5px" }}
-//             >
-//               {" "}
-//              Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.
-//             </p>
-//            <span><button className="bg-lime-700 text-[16px] text-white  py-2 px-[15px] rounded-[4px] mt-6 font-semibold tracking-wider">
-//             Know more
-//             </button></span> 
-//             </div>
-
-
-
-
-
-            
-//       </div>
-//     </div>
-//   )
-// }
-
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
-import mask2 from "../assets/mask2.png";
-import mask1 from "../assets/mask1.png";
+import { WorkCases } from "../constants";
 
+import { RecentWorkCard } from "./Cards";
 export default function RecentWork() {
+ 
   return (
-    <div id='recentWork' className="bg-white pt-20 pb-16  md:px-[90px] lg:px-[180px] px-6">
-      {/* Header section */}
-      <div className="flex flex-col gap-3 items-center justify-center pb-16">
-        <h1 className="font-bold text-black text-[30px]">Recent Work</h1>
+    <div
+      id="recentWork"
+      className="bg-white pt-20 pb-16  md:px-[90px] lg:px-[180px] px-6"
+    >
+      <div className="flex flex-col gap-1 items-center justify-center pb-16">
+        <h1 className="font-bold text-black text-[30px] raleway-font">Recent Work</h1>
         <p
-          className="text-neutral-400 max-w-[582px] tracking-widest text-center px-2 "
+          className="text-neutral-400 max-w-[530px] ibm-font text-center px-2 text-[14px] leading-relaxed "
           style={{ wordSpacing: "5px" }}
         >
           Solving user & business problems since last 15+ years. Lorem ipsum
@@ -86,7 +25,6 @@ export default function RecentWork() {
         </p>
       </div>
 
-      {/* Swiper Carousel */}
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation
@@ -98,45 +36,17 @@ export default function RecentWork() {
         }}
         className="max-w-[1000px]"
       >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div className="flex flex-col">
-            <img src={mask2} alt="work" />
-            <h1 className="font-bold text-black text-[24px] my-4">
-              Work name here
-            </h1>
-            <p
-              className="text-neutral-400 tracking-widest text-[14px] mt-2"
-              style={{ wordSpacing: "5px" }}
-            >
-              Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut
-              labore et dolore magna.
-            </p>
-           <span> <button className="bg-lime-700 text-[16px] text-white py-2 px-[15px] rounded-[4px] mt-6 font-semibold tracking-wider">
-              Know more
-            </button></span>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 2 */}
-        <SwiperSlide>
-          <div className="flex flex-col">
-            <img src={mask1} alt="work" />
-            <h1 className="font-bold text-black text-[24px] my-4">
-              Work name here
-            </h1>
-            <p
-              className="text-neutral-400 tracking-widest text-[14px] mt-2"
-              style={{ wordSpacing: "5px" }}
-            >
-              Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut
-              labore et dolore magna.
-            </p>
-           <span> <button className="bg-lime-700 text-[16px] text-white py-2 px-[15px] rounded-[4px] mt-6 font-semibold tracking-wider">
-              Know more
-            </button></span>
-          </div>
-        </SwiperSlide>
+        <div className="px-[180px]">
+          {WorkCases.map((c, i) => {
+            return (
+              <SwiperSlide>
+                <div className="flex flex-row justify-center items-center   w-full   ">
+                  <RecentWorkCard key={i} {...c} />
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </div>
       </Swiper>
     </div>
   );
